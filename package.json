@@ -1,13 +1,13 @@
 {
-  "name": "onein-code-comp",
+  "name": "onein-code-comp-template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/onein-code-comp.umd.cjs",
-  "module": "./dist/onein-code-comp.js",
+  "main": "./dist/onein-code-comp-template.umd.cjs",
+  "module": "./dist/onein-code-comp-template.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
