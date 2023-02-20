@@ -8,29 +8,33 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ```
 onein-code-comp
+├─ .env.debug
 ├─ index.html
-├─ output                 // 压缩后文件包目录
+├─ output                    // 压缩后文件包目录
 ├─ package-lock.json
 ├─ package.json
 ├─ public
-│  └─ favicon.ico
 ├─ README.md
 ├─ shims-ext.d.ts
 ├─ src
-│  ├─ App.vue             // 代码组件主文件
-│  ├─ assets              // 静态资源目录
-│  │  └─ add.png
-│  ├─ components          // 子组件目录
+│  ├─ App.vue
+│  ├─ assets                 // 静态资源目录
+│  │  ├─ add.png
+│  │  └─ mazhao.jpg
+│  ├─ components             // 子组件目录
 │  │  └─ ListItem.vue
-│  ├─ lib                 // 库模式目录
-│  │  └─ main.ts
+│  ├─ lib                    // 库模式目录
+│  │  ├─ index.ts
+│  │  └─ index.vue           // 代码组件主文件
 │  ├─ main.js
-│  ├─ scripts             // 脚本目录
-│  │  ├─ build-zip.js     // 压缩dist文件脚本
-│  │  ├─ copy.js         // 复制配置脚本
-│  │  └─ upload.js
-│  ├─ settings            // 组件配置目录
-│  │  └─ config.json
+│  ├─ scripts                // 脚本目录
+│  │  ├─ build-zip.js        // 压缩脚本
+│  │  ├─ copy.js             
+│  │  ├─ debug.js            // 调试脚本
+│  │  └─ upload.js           // 代码上传脚本
+│  ├─ settings               // 组件配置目录
+│  │  ├─ config.json         // 组件名称，调试相关配置
+│  │  └─ props.json          // 组件数据面板，事件面板配置
 │  └─ style.css
 ├─ tsconfig.json
 └─ vite.config.js

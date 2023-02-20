@@ -1,0 +1,18 @@
+{
+  "dataGroups": [
+    {
+      "label": "标题",
+      "type": "expression",
+      "propsKey": "todoTitle",
+      "defaultValue": "代办列表",
+      "groups": ""
+    }
+  ],
+  "eventGroups": [
+    {
+      "name": "代办新增事件",
+      "key": "addTodo",
+      "triggerType": "click"
+    }
+  ]
+}

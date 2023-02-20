@@ -1,60 +1,9 @@
 {
-    "dataGroups": [
-        {
-            "label": "数据源",
-            "type": "valueExpression",
-            "propsKey": "pagetitle",
-            "defaultValue": null,
-            "groups": ""
-        },
-        {
-            "label": "数据源",
-            "type": "dataSourceExpression",
-            "propsKey": "list",
-            "defaultValue": null,
-            "groups": ""
-        },
-        {
-            "label": "当前页码",
-            "type": "pageVariable",
-            "propsKey": "currentPage_sync",
-            "defaultValue": 1,
-            "groups": ""
-        },
-        {
-            "label": "每页条数",
-            "type": "pageVariable",
-            "propsKey": "pageSize_sync",
-            "defaultValue": 10,
-            "groups": ""
-        },
-        {
-            "label": "总记录数",
-            "type": "expression",
-            "propsKey": "total",
-            "defaultValue": 100,
-            "groups": ""
-        },
-        {
-            "label": "显示总数",
-            "type": "switch",
-            "propsKey": "showTotal",
-            "defaultValue": true,
-            "groups": ""
-        },
-        {
-            "label": "跳转前往",
-            "type": "switch",
-            "propsKey": "showJumper",
-            "defaultValue": true,
-            "groups": ""
-        }
-    ],
-    "eventGroups": [
-        {
-            "name": "页面改变事件",
-            "key": "pageChange",
-            "triggerType": "change"
-        }
-    ]
+  "name": "todo",
+  "label": "代办组件",
+  "prefix": "Oc",
+  "debugSuffix": "debug",
+  "debugUrl": "https://admin.n.onein.cn/ns/",
+  "appId": "ddf19075-2df0-4d52-8a19-821ae002fe80",
+  "platform": "pc"
 }

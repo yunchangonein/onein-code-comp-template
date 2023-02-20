@@ -5,7 +5,7 @@ import ora from "ora";
 export function copy() {
   const spinner = ora("复制配置文件");
   spinner.start();
-  const fileName = "config.json";
+  const fileName = "props.json";
   const cwd = process.cwd();
 
   const sourceFile = path.join(cwd, "src/settings", fileName);
