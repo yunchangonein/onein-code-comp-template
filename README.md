@@ -20,8 +20,12 @@ onein-code-comp-template
 ├─ src
 │  ├─ App.vue
 │  ├─ assets                 // 静态资源目录
-│  │  ├─ add.png
-│  │  └─ mazhao.jpg
+│  │  ├─ css                 // css目录
+│  │  │  └─ style.scss
+│  │  ├─ images              // 图片目录
+│  │  │  └─ add.png
+│  │  └─ js                  // js目录
+│  │     └─ day.js
 │  ├─ components             // 子组件目录
 │  │  └─ ListItem.vue
 │  ├─ lib                    // 库模式目录
