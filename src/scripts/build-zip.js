@@ -14,6 +14,10 @@ copy()
 const spinner = ora('代码压缩')
 spinner.start()
 
+if(!fs.existsSync(path.join(cwd,'output'))) {
+  fs.mkdirSync(path.join(cwd,'output'))
+}
+
 const output = fs.createWriteStream(path.join(cwd, "output", "/dist.zip"));
 const archive = archiver("zip", {
   zlib: { level: 9 },

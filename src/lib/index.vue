@@ -3,7 +3,7 @@
         <h2 class="title">{{ todoTitle }}</h2>
         <p class="datatime">{{ time }}</p>
         <div class="head">
-            <el-input v-model="title"></el-input>
+            <el-input v-model="title" clearable></el-input>
             <el-button class="addBtn" @click="addTodo" type="primary"><img class="img"
                     src="../assets/images/add.png" /></el-button>
         </div>
@@ -40,6 +40,7 @@ const _emits = defineEmits(['addTodo']);
 
 const addTodo = () => {
     title.value && listData.value.push({ text: title.value, isCheck: false });
+    title.value = ""
     _emits('addTodo', title.value)
 };
 

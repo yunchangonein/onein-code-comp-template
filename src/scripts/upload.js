@@ -41,5 +41,4 @@ function uploadZip() {
       console.log(err);
     });
 }
-
 uploadZip();
