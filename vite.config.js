@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: resolve(__dirname, "src/lib/index.ts"),
-        formats: ["iife", "cjs"],
+        formats: ["iife", "es"],
         name: name || pkg.name,
       },
       rollupOptions: {
