@@ -7,9 +7,9 @@ import config from "./src/settings/config.json";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  let name = `${config.prefix}${config.namespcae}${config.name}`;
+  let name = `${config.prefix}${config.namespace}${config.name}`;
   if (mode === "debug") {
-    name = `${config.prefix}${config.namespcae}${config.name}${config.debugSuffix}`;
+    name = `${config.prefix}${config.namespace}${config.name}${config.debugSuffix}`;
   }
   return {
     plugins: [vue(), ElementPlus()],
