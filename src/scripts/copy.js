@@ -5,12 +5,15 @@ import ora from "ora";
 export function copy() {
   const spinner = ora("复制配置文件");
   spinner.start();
-  const fileName = "props.json";
+  const fileNames = ["props.json", "config.json"];
   const cwd = process.cwd();
 
-  const sourceFile = path.join(cwd, "src/settings", fileName);
-  const targetFile = path.join(cwd, "dist", fileName);
-
-  fs.copyFileSync(sourceFile, targetFile);
+  let sourceFile = ""
+  let targetFile = ""
+  for (let name of fileNames) {
+    sourceFile = path.join(cwd, "src/settings", name);
+    targetFile = path.join(cwd, "dist", name);
+    fs.copyFileSync(sourceFile, targetFile);
+  }
   spinner.succeed();
 }
