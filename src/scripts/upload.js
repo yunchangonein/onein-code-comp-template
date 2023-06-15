@@ -23,7 +23,7 @@ function uploadZip() {
   );
   formData.append("AppId", debugConfig.appId);
   formData.append("Name", debugConfig.label);
-  formData.append("Code", `${debugConfig.name}${debugConfig.debugSuffix}`);
+  formData.append("Code", `${debugConfig.namespace}${debugConfig.name}${debugConfig.debugSuffix}`);
   formData.append("Platform", debugConfig.platform);
   axios
     .post(`${baseUrl}CodeComponent/UploadDebugCodeComponent`, formData, {
