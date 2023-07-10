@@ -11,6 +11,10 @@ export default defineConfig(({ mode }) => {
   if (mode === "debug") {
     name = `${config.prefix}${config.namespace}${config.name}${config.debugSuffix}`;
   }
+  let defaultExternal = ["vue", "element-plus", "@vueuse/core", "axios"];
+  if (config.external) {
+    defaultExternal = [...defaultExternal, ...Object.keys(config.dependencies)];
+  }
   return {
     plugins: [vue(), ElementPlus()],
     build: {
@@ -20,7 +24,7 @@ export default defineConfig(({ mode }) => {
         name: name || pkg.name,
       },
       rollupOptions: {
-        external: ["vue", "element-plus", "@vueuse/core", "axios"],
+        external: defaultExternal,
         output: {
           globals: {
             vue: "Vue",
