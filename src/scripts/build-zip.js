@@ -3,13 +3,19 @@ import path from "path";
 import archiver from "archiver";
 import chalk from "chalk";
 import ora from "ora";
-import { copy } from './copy.js'
+import { execa } from 'execa'
+import { copyConfig, copyDist } from './copy.js'
 
 const cwd = process.cwd();
 
-const target = ["dist"];
+const target = ["temp"];
 
-copy()
+await execa('npm', ['run', 'build:dev'])
+copyDist()
+await execa('npm', ['run', 'build:prod'])
+copyDist()
+
+copyConfig()
 
 const spinner = ora('代码压缩')
 spinner.start()

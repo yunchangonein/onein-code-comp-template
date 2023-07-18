@@ -8,12 +8,13 @@ import config from "./src/settings/config.json";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   let name = `${config.prefix}${config.namespace}${config.name}`;
+  let fileName = `onein-code-comp-template.${mode}`
   if (mode === "debug") {
     name = `${config.prefix}${config.namespace}${config.name}${config.debugSuffix}`;
   }
   let defaultExternal = ["vue", "element-plus", "@vueuse/core", "axios"];
-  if (config.external) {
-    defaultExternal = [...defaultExternal, ...Object.keys(config.dependencies)];
+  if (mode === "prod") {
+    defaultExternal = [...defaultExternal, ...Object.keys(pkg.dependencies)];
   }
   return {
     plugins: [vue(), ElementPlus()],
@@ -22,6 +23,7 @@ export default defineConfig(({ mode }) => {
         entry: resolve(__dirname, "src/lib/index.ts"),
         formats: ["iife", "es"],
         name: name || pkg.name,
+        fileName: fileName
       },
       rollupOptions: {
         external: defaultExternal,

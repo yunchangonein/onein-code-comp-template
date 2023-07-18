@@ -21,7 +21,7 @@ function collection() {
   fs.writeFileSync(filePath, JSON.stringify(jsonData));
 }
 
-export function copy() {
+export function copyConfig() {
   const spinner = ora("复制配置文件");
   spinner.start();
 
@@ -33,8 +33,29 @@ export function copy() {
   let targetFile = ""
   for (let name of fileNames) {
     sourceFile = path.join(cwd, "src/settings", name);
-    targetFile = path.join(cwd, "dist", name);
+    targetFile = path.join(cwd, "temp", name);
     fs.copyFileSync(sourceFile, targetFile);
   }
   spinner.succeed();
 }
+
+export function copyDist() {
+  let sourceDir = 'dist'
+  let targetDir = 'temp'
+  const spinner = ora("复制代码组件");
+  spinner.start();
+  const cwd = process.cwd();
+  const files = fs.readdirSync(sourceDir)
+
+  files.forEach(file => {
+    const sourcePath = path.join(cwd, sourceDir, file);
+    const targetPath = path.join(cwd, targetDir, file);
+
+    const isExsist = fs.existsSync(targetPath);
+    if(!isExsist) {
+      fs.copyFileSync(sourcePath, targetPath);
+    }
+  })
+  spinner.succeed();
+}
+
