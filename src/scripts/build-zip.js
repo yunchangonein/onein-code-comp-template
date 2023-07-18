@@ -10,6 +10,10 @@ const cwd = process.cwd();
 
 const target = ["temp"];
 
+if(!fs.existsSync(path.join(cwd, target[0]))) {
+  fs.mkdirSync(path.join(cwd, target[0]))
+}
+
 await execa('npm', ['run', 'build:dev'])
 copyDist()
 await execa('npm', ['run', 'build:prod'])
