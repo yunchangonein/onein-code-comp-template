@@ -16,6 +16,7 @@
     "build:debug": "vite build --mode debug",
     "watch:debug": "onchange -i \"src/**/*.js\" \"src/**/*.ts\" \"src/**/*.vue\" -- node src/scripts/debug.js",
     "deploy": "node src/scripts/build-zip.js",
+    "deploy:debug": "node src/scripts/build-zip.js debug",
     "upload": "node src/scripts/upload.js"
   },
   "dependencies": {

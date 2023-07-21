@@ -9,6 +9,10 @@ import { emptyDir } from "./utils.js";
 
 const cwd = process.cwd();
 
+const args = process.argv.slice(2)
+
+console.log(args)
+
 const target = ["temp"];
 
 if (!fs.existsSync(path.join(cwd, target[0]))) {
@@ -17,10 +21,18 @@ if (!fs.existsSync(path.join(cwd, target[0]))) {
   emptyDir(path.join(cwd, target[0]));
 }
 
-await execa("npm", ["run", "build:dev"]);
-copyDist("dev");
-await execa("npm", ["run", "build:prod"]);
-copyDist("prod");
+if(args && args[0] === 'debug') {
+  await execa("npm", ["run", "build:debug"]);
+  copyDist("dev");
+}else{
+  await execa("npm", ["run", "build:dev"]);
+  copyDist("dev");
+  await execa("npm", ["run", "build:prod"]);
+  copyDist("prod");
+}
+
+
+
 
 copyConfig();
 

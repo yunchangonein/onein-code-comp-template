@@ -8,7 +8,7 @@ import config from "./src/settings/config.json";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   let name = `${config.prefix}${config.namespace}${config.name}`;
-  let fileName = `onein-code-comp-template.${mode}`
+  let fileName = mode === 'debug' ? `onein-code-comp-template.dev` : `onein-code-comp-template.${mode}`
   if (mode === "debug") {
     name = `${config.prefix}${config.namespace}${config.name}${config.debugSuffix}`;
   }
