@@ -39,10 +39,11 @@ export function copyConfig() {
   spinner.succeed();
 }
 
-export function copyDist() {
+export function copyDist(env) {
   let sourceDir = 'dist'
   let targetDir = 'temp'
-  const spinner = ora("复制代码组件");
+  let text = env === 'dev' ? '复制开发环境代码组件' : '复制生产环境代码组件'
+  const spinner = ora(text);
   spinner.start();
   const cwd = process.cwd();
   const files = fs.readdirSync(sourceDir)

@@ -10,11 +10,11 @@
   "module": "./dist/onein-code-comp-template.js",
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview",
     "build:prod": "vite build --mode prod",
     "build:dev": "vite build --mode dev",
-    "preview": "vite preview",
     "build:debug": "vite build --mode debug",
-    "watch:debug": "onchange -i \"src/**/*.js\" \"src/**/*.ts\" \"src/**/*.vue\" \"src/**/*.json\" -- node src/scripts/debug.js",
+    "watch:debug": "onchange -i \"src/**/*.js\" \"src/**/*.ts\" \"src/**/*.vue\" -- node src/scripts/debug.js",
     "deploy": "node src/scripts/build-zip.js",
     "upload": "node src/scripts/upload.js"
   },
